@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate 
         
         webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
         
-        let url = NSURL(string: "http://example.com")
+        let url = NSURL(string: "https://developer.apple.com/")
         let request = NSURLRequest(URL:url!)
         webView.loadRequest(request)
         
