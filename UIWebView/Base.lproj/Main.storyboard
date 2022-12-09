@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uFQ-QS-5Yz">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uFQ-QS-5Yz">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,82 +16,81 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEd-gM-lq2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eee-3H-0KU">
+                                <rect key="frame" x="20" y="94" width="388" height="749"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qbz-bw-Jnf">
-                                <rect key="frame" x="0.0" y="64" width="320" height="2"/>
+                                <rect key="frame" x="20" y="92" width="388" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Fri-h9-c0V"/>
+                                </constraints>
                             </progressView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-qV-1a8">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <items>
-                                    <barButtonItem image="chevron-left" id="RbJ-lD-PJG">
+                                    <barButtonItem enabled="NO" image="chevron.backward" catalog="system" id="RbJ-lD-PJG">
                                         <connections>
-                                            <action selector="barBackButtonAction:" destination="BYZ-38-t0r" id="w3K-ic-J3d"/>
+                                            <action selector="barBackButtonActionWithSender:" destination="BYZ-38-t0r" id="ZhN-T8-JIO"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="UIb-uu-Sai"/>
-                                    <barButtonItem image="chevron-right" id="Z4p-LF-iPy">
+                                    <barButtonItem enabled="NO" image="chevron.forward" catalog="system" id="Z4p-LF-iPy">
                                         <connections>
-                                            <action selector="barForwardButtonAction:" destination="BYZ-38-t0r" id="81w-1P-eMs"/>
+                                            <action selector="barForwardButtonActionWithSender:" destination="BYZ-38-t0r" id="xO3-UC-h1a"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NS6-PX-PWQ"/>
                                     <barButtonItem systemItem="refresh" id="inp-1h-cUl">
                                         <connections>
-                                            <action selector="barReloadButtonAction:" destination="BYZ-38-t0r" id="cuE-Lh-zCF"/>
+                                            <action selector="barReloadButtonActionWithSender:" destination="BYZ-38-t0r" id="Lv7-md-LnS"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aRI-qV-1a8" firstAttribute="top" secondItem="pEd-gM-lq2" secondAttribute="bottom" id="1o8-JD-qBn"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pEd-gM-lq2" secondAttribute="bottom" id="86J-UD-mU6"/>
-                            <constraint firstItem="qbz-bw-Jnf" firstAttribute="leading" secondItem="pEd-gM-lq2" secondAttribute="leading" id="A23-eU-fA6"/>
-                            <constraint firstItem="qbz-bw-Jnf" firstAttribute="trailing" secondItem="pEd-gM-lq2" secondAttribute="trailing" id="DTG-RK-3gI"/>
-                            <constraint firstAttribute="trailing" secondItem="pEd-gM-lq2" secondAttribute="trailing" id="LvZ-ql-faZ"/>
-                            <constraint firstItem="pEd-gM-lq2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U88-S0-Ous"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aRI-qV-1a8" secondAttribute="bottom" id="VtH-TD-Whi"/>
-                            <constraint firstItem="qbz-bw-Jnf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cf5-WG-l6L"/>
-                            <constraint firstAttribute="trailing" secondItem="aRI-qV-1a8" secondAttribute="trailing" id="et2-5e-hbw"/>
-                            <constraint firstItem="aRI-qV-1a8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uy7-TZ-vDF"/>
-                            <constraint firstItem="pEd-gM-lq2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="viS-Z2-xdv"/>
+                            <constraint firstItem="eee-3H-0KU" firstAttribute="top" secondItem="qbz-bw-Jnf" secondAttribute="bottom" id="7ff-Qt-luL"/>
+                            <constraint firstItem="aRI-qV-1a8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H8Q-Gh-nTA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aRI-qV-1a8" secondAttribute="bottom" id="Nxe-9l-YE3"/>
+                            <constraint firstItem="qbz-bw-Jnf" firstAttribute="trailing" secondItem="eee-3H-0KU" secondAttribute="trailing" id="PiC-T6-Vh6"/>
+                            <constraint firstItem="eee-3H-0KU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="3" id="Rh5-MK-SEa"/>
+                            <constraint firstAttribute="trailing" secondItem="aRI-qV-1a8" secondAttribute="trailing" id="XzF-Wl-ni1"/>
+                            <constraint firstItem="eee-3H-0KU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cN6-ye-E7F"/>
+                            <constraint firstItem="qbz-bw-Jnf" firstAttribute="leading" secondItem="eee-3H-0KU" secondAttribute="leading" id="jgl-rI-o2K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eee-3H-0KU" secondAttribute="trailing" id="oDm-wA-BpL"/>
+                            <constraint firstItem="aRI-qV-1a8" firstAttribute="top" secondItem="eee-3H-0KU" secondAttribute="bottom" symbolic="YES" id="sEy-ZT-Jok"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="86J-UD-mU6"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="cKt-O1-Fy5"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="barBackButton" destination="RbJ-lD-PJG" id="FGU-EA-YIP"/>
                         <outlet property="barForwardButton" destination="Z4p-LF-iPy" id="MhR-lV-VNe"/>
                         <outlet property="barReloadButton" destination="inp-1h-cUl" id="qiz-lx-1TF"/>
-                        <outlet property="myProgressView" destination="qbz-bw-Jnf" id="jc8-kR-opF"/>
+                        <outlet property="progressBar" destination="qbz-bw-Jnf" id="xyz-ew-LxJ"/>
                         <outlet property="toolbar" destination="aRI-qV-1a8" id="AbN-29-Afm"/>
-                        <outlet property="webView" destination="pEd-gM-lq2" id="9FS-6Y-Y7x"/>
+                        <outlet property="webView" destination="eee-3H-0KU" id="25o-mO-1qZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="205"/>
+            <point key="canvasLocation" x="1100" y="204.67784642541923"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jvd-PN-Vpx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uFQ-QS-5Yz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iM7-MT-5FT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -103,7 +104,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron-left" width="15" height="24"/>
-        <image name="chevron-right" width="14" height="21"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="chevron.forward" catalog="system" width="97" height="128"/>
     </resources>
 </document>
